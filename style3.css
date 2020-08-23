@@ -150,7 +150,7 @@ header .menu-wrap .menu{
     display: none;
     transition: all .4s ease;
     text-align: center;
-    Z-index:8;
+    Z-index:1;
 }
 header .menu-wrap .menu ul:not(.sub-category){
     list-style: none;
