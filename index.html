@@ -25,6 +25,52 @@
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li class="category">
+                        <a href="#">
+                            Category1
+                            <ul class="sub-category">
+                                <li>sub-category-1 Lorem, ipsum dolor</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="category">
+                        <a href="#">
+                            Category2
+                            <ul class="sub-category">
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="category">
+                        <a href="#">
+                            Category3
+                            <ul class="sub-category">
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="category">
+                        <a href="#">
+                            Category4
+                            <ul class="sub-category">
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                                <li>sub-category-1</li>
+                            </ul>
+                        </a>
+                    </li>
                 </ul>
                 <div class="main-back"></div>
                 <!-- </div> -->
@@ -553,6 +599,21 @@
     </footer>
 </body>
 <script>
+    //////////////      for sub-category ul start          ////////////////
+    document.querySelectorAll('header .menu-wrap .menu ul li.category').forEach(item =>{
+        item.addEventListener('click',(element)=>{
+            element.preventDefault()
+            // console.log(element.srcElement.children[0])
+            if(element.srcElement.children[0].style.display=="block"){
+                console.log(element.srcElement.children[0]);
+                element.srcElement.children[0].style.display="none"
+            }else{
+                element.srcElement.children[0].style.display="block"
+            }
+        })
+    })
+    //////////////      for sub-category ul end          ////////////////
+
     //////////////           function for ads-content start          ////////////////
     
     function slide_with_time(){
