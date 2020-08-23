@@ -1,13 +1,8 @@
-/* :root{
-    --primary-color:#8338EC;
-    --primary-color:#3A86FF;
-    --secondary-color:#F8F9FA;
-    --tertiary-color:#FB5607;
-    --tertiary-color:#011627;
-    --forth-color:#FFEE0B;
-     --forth-color:#ff006E;
-    --font-display:'Roboto', sans-serif;
-} */
+/*  z-index:1  for arrow or .prev .next */
+/*  z-index:0  for body or other items */
+/*  z-index:9  for .hamburger ,header ,header h1, header .cart*/
+/*  z-index:10  for .toggler   */
+
 :root{
     /* --primary-color:rgba(13,110,139,0.55); */
     --primary-color:#3A86FF;
@@ -70,7 +65,7 @@ header{
 /*hamburger menu*/
 header .menu-wrap{
     position: relative;
-    margin: 5px 10px;
+    margin: 0px 10px;
     /* margin-top: 5px; */
     /* margin-left: 15px; */
     /* display: inline-block; */
@@ -80,7 +75,6 @@ header .menu-wrap{
     /* border: 2px solid blue; */
     top: 0;
     left: 0;
-    z-index: 9;
 }
 header .menu-wrap .toggler{
     position: relative;
@@ -112,7 +106,7 @@ header .menu-wrap .hamburger{
 header .menu-wrap .hamburger > div{
     position: relative;
     width: 100%;
-    height:2px;
+    height:2.6px;
     background-color:var(--primary-color);
     transition: all .4s ease;
 }
@@ -123,9 +117,8 @@ header .menu-wrap .hamburger > div::after{
     top: -10px;
     left: 0;
     width: 100%;
-    height:2px;
+    height:2.6px;
     background-color:var(--primary-color);
-    z-index: 9;
 }
 header .menu-wrap .hamburger > div::after{
     top: 10px;
@@ -142,72 +135,95 @@ header .menu-wrap .toggler:checked + .hamburger > div::after
 header .menu-wrap .toggler:checked ~ .menu{
     /* transform: scale(1); */
     opacity: 1;
-    z-index: 13;
+    display: flex;
     /* display: block; */
 }
 
 header .menu-wrap .menu{
     position: fixed;
-    top: 4.3rem;
+    top:0;
+    /* top: 4.3rem; */
     left: 0;
-    /* z-index: -1; */
-    display: none;
     opacity: 0;
-    height: 100%;
+    height: 90.5%;
     width: 100%;
-    display: flex;
+    /* display: flex; */
+    display: none;
     /* flex-direction: column; */
-    justify-content: center;
+    /* justify-content: center; */
     /* border-radius: 50%; */
-    /* background-color: var(--primary-color); */
     align-items: center;
     /* transform: scale(0); */
     transition: all .4s ease;
-    z-index: 9;
 }
 header .menu-wrap .menu ul{
+    margin-top: 8.5rem;
     list-style: none;
     height: 100%;
     background-color: var(--primary-color);
+    overflow-y: scroll;
+    /* scroll-behavior: smooth; */
 }
 header .menu-wrap .menu ul li{
-    font-size: 1em;
-    background-color: rgba(58, 134, 255, .9);
-    padding: .3rem 2rem;
-    border-bottom: 2px solid var(--forth-color);
+    text-align: center;
+    margin: 0 3.5rem;
+    cursor: pointer;
 }
+header .menu-wrap .menu ul li:not(.category){
+    /* padding:0 10rem; */
+    /* text-align: center; */
+    /* border-bottom: 2px solid var(--forth-color); */
+    /* align-content: center; */
+    /* align-items: center; */
+    /* padding: 0 3rem; */
+}
+
 header .menu-wrap .menu ul li a{
+    font-size: 1.3rem;
+    /* margin: 0 3rem; */
+    text-align: center;
     text-decoration: none;
-    /* color: #ffffff; */
     color: var(--forth-color);
+    /* text-align: center; */
 }
+header .menu-wrap .menu ul li a ul.sub-category{
+    cursor: pointer;
+    margin:0;
+    display: none;
+    overflow: hidden;
+}
+header .menu-wrap .menu ul li a ul.sub-category li{
+    background-color: var(--forth-color);
+    color: var(--primary-color);
+    /* padding: 0 1rem; */
+    margin:.3rem 0;
+    padding: 0;
+    border-radius: 12px;
+}
+
 header .menu-wrap .menu .main-back{
-    width: 97%;
+    margin-top: 8.5rem ;
+    width: 90%;
     height: 100%;
     opacity: .8;
     background-color: var(--overlay-color);
 }
 
 header h1{
-    /* font-family: 'Bangers', cursive; */
     font-family: 'Dancing Script', cursive;
     text-align: center;
-    /* padding-top: 15px; */
     display: inline-block;
-    /* border: 2px solid blue; */
     flex-grow: 3;
     font-size: 3.6rem;
     color: var(--forth-color);
-    /* text-shadow: -1px 0  black, 0 1px 5px  black, 1px 0 black, 0 -1px black; */
+    z-index: 9;
 }
 header div.cart{
-    /* margin-top: 200px; */
-    /* border: 2px solid black; */
     cursor: pointer;
 }
 header div.cart{
-    margin:2px;
-    margin-right: 20px;
+    margin:2px 0;
+    margin-right: 1rem;
     padding: .3rem;
     padding-left:.7rem;
     padding-right:.7rem;
@@ -215,8 +231,7 @@ header div.cart{
     border: 2px solid var(--forth-color);
     background-color: var(--forth-color);
     align-items: center;
-    /* display: flex; */
-    /* flex-direction: column; */
+    z-index: 9;
     color: var(--primary-color);
     /* text-shadow: -1px 0  black, 0 1px  black, 1px 0 black, 0 -1px black; */
 }
@@ -341,7 +356,7 @@ header div.cart img{
 #i1:checked ~ #one,
 #i2:checked ~ #two,
 #i3:checked ~ #three{
-    z-index: 8;
+    z-index: 0;
     opacity: 1;
     transition: all .4s ease-in-out;
 }
@@ -457,7 +472,6 @@ header div.cart img{
     box-shadow: 4px 4px 20px var(--primary-color);
 }
 .container-cards-slides .container-cards .product_view span{
-    pointer-events: none !important;
     /* position: relative; */
     /* top:50%; */
     /* left: 20%; */
@@ -482,7 +496,7 @@ header div.cart img{
     color:rgba(58, 134, 255, 1);
     cursor: pointer;
     text-align: center;
-    z-index: 9;
+    z-index: 1;
     transition: all .3s ease;
     display: flex;
     align-items: center;
@@ -619,8 +633,10 @@ footer .foot-links a:hover{
 /*////////////////////////       media queries              /////////////////////////*/
 
 @media only screen and (max-width: 1000px){
-    header .menu-wrap .menu{
-        top:3rem;
+    header .menu-wrap .menu ul,
+    header .menu-wrap .menu .main-back
+    {
+        margin-top: 6.4rem;
     }
     header h1{
         font-size: 2rem;
@@ -645,7 +661,11 @@ footer .foot-links a:hover{
     }
 }
 @media only screen and (max-width: 500px){
-
+    header .menu-wrap .menu ul,
+    header .menu-wrap .menu .main-back
+    {
+        margin-top: 5rem;
+    }
     header .menu-wrap .toggler,
     header .menu-wrap .hamburger{
         width: 2.9rem;
