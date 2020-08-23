@@ -141,73 +141,49 @@ header .menu-wrap .toggler:checked ~ .menu{
 
 header .menu-wrap .menu{
     position: fixed;
+    background-color: var(--overlay-color);
     top:0;
-    /* top: 4.3rem; */
     left: 0;
     opacity: 0;
-    height: 90.5%;
+    height: 100%;
     width: 100%;
-    /* display: flex; */
     display: none;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* border-radius: 50%; */
-    align-items: center;
-    /* transform: scale(0); */
     transition: all .4s ease;
+    text-align: center;
 }
-header .menu-wrap .menu ul{
-    margin-top: 8.5rem;
+header .menu-wrap .menu ul:not(.sub-category){
     list-style: none;
     height: 100%;
+    /* width: 50%; */
+    padding-top:4.5rem;
     background-color: var(--primary-color);
     overflow-y: scroll;
+
+    /* overflow-x: hidden; */
     /* scroll-behavior: smooth; */
 }
 header .menu-wrap .menu ul li{
-    text-align: center;
-    margin: 0 3.5rem;
+    padding: 0 2rem;
     cursor: pointer;
 }
-header .menu-wrap .menu ul li:not(.category){
-    /* padding:0 10rem; */
-    /* text-align: center; */
-    /* border-bottom: 2px solid var(--forth-color); */
-    /* align-content: center; */
-    /* align-items: center; */
-    /* padding: 0 3rem; */
-}
-
 header .menu-wrap .menu ul li a{
     font-size: 1.3rem;
-    /* margin: 0 3rem; */
-    text-align: center;
     text-decoration: none;
     color: var(--forth-color);
-    /* text-align: center; */
 }
 header .menu-wrap .menu ul li a ul.sub-category{
     cursor: pointer;
-    margin:0;
+    margin:0 auto;
     display: none;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 header .menu-wrap .menu ul li a ul.sub-category li{
     background-color: var(--forth-color);
     color: var(--primary-color);
-    /* padding: 0 1rem; */
-    margin:.3rem 0;
-    padding: 0;
-    border-radius: 12px;
+    margin:.3rem auto;
+    border-radius: 10px;
 }
 
-header .menu-wrap .menu .main-back{
-    margin-top: 8.5rem ;
-    width: 90%;
-    height: 100%;
-    opacity: .8;
-    background-color: var(--overlay-color);
-}
 
 header h1{
     font-family: 'Dancing Script', cursive;
@@ -633,11 +609,11 @@ footer .foot-links a:hover{
 /*////////////////////////       media queries              /////////////////////////*/
 
 @media only screen and (max-width: 1000px){
-    header .menu-wrap .menu ul,
+    /* header .menu-wrap .menu ul,
     header .menu-wrap .menu .main-back
     {
         margin-top: 6.4rem;
-    }
+    } */
     header h1{
         font-size: 2rem;
     }
@@ -661,11 +637,11 @@ footer .foot-links a:hover{
     }
 }
 @media only screen and (max-width: 500px){
-    header .menu-wrap .menu ul,
+    /* header .menu-wrap .menu ul,
     header .menu-wrap .menu .main-back
     {
         margin-top: 5rem;
-    }
+    } */
     header .menu-wrap .toggler,
     header .menu-wrap .hamburger{
         width: 2.9rem;
