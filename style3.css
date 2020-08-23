@@ -1,7 +1,8 @@
 /*  z-index:1  for arrow or .prev .next */
 /*  z-index:0  for body or other items */
-/*  z-index:9  for .hamburger ,header ,header h1, header .cart*/
-/*  z-index:10  for .toggler   */
+/*  z-index:8  for header .menu-wrap .menu  */
+/*  z-index:9  for .hamburger,  */
+/*  z-index:10  for .toggler,header   */
 
 :root{
     /* --primary-color:rgba(13,110,139,0.55); */
@@ -50,7 +51,7 @@ header{
     position: sticky;
     top: 0;
     left:0;
-    z-index: 9;
+    z-index: 10;
     margin: auto;
     font-size: 1.8rem;
     /* margin-top:.5rem; */
@@ -140,6 +141,7 @@ header .menu-wrap .toggler:checked ~ .menu{
 }
 
 header .menu-wrap .menu{
+    z-index:8;
     position: fixed;
     background-color: var(--overlay-color);
     top:0;
@@ -147,10 +149,9 @@ header .menu-wrap .menu{
     opacity: 0;
     height: 100%;
     width: 100%;
-    display: none;
     transition: all .4s ease;
     text-align: center;
-    Z-index:1;
+    display: none;
 }
 header .menu-wrap .menu ul:not(.sub-category){
     list-style: none;
