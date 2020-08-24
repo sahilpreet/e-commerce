@@ -143,7 +143,9 @@ header .menu-wrap .toggler:checked ~ .menu{
 
 header .menu-wrap .menu{
     z-index:8;
-    position: fixed;
+    /*position: fixed;*/
+    position: sticky;
+    position: -webkit-sticky;
     background-color: var(--overlay-color);
     top:0;
     left: 0;
